@@ -1,15 +1,13 @@
 # **Note - Not all scripts are shown in this reprository (for security reasons)**
-# Luau-Showcase - Weapon system
+# *Info*
 This repository is a showcase of a weapon combat system programmed with Luau - by Rhyz152
-
-# ***Info***
 This combat system is inspired by the combat of Bleach Roblox game, **VV Ultimatum.**
 Before reading this documentation, it is highly recommended to read the scripts as it is explained better if you have but you don't really need to understand it, since I explain it here.
-**The UI was created using React + ReactRoblox.**
+This project using the following Packages: React, ReactRoblox
 **If you're wondering what a 'Zanpakuto' is,** its the word for weapon (basically) in Bleach (manga/anime).
 Game link: https://www.roblox.com/games/90192835918318/Zanpakuto
 
-# ***Combat System***
+# *Combat System*
 In this project, I use a **table of data (name, damage, animation id, etc)** to efficiently make it so that we don't have to manually change variables, and other things that may need changing, to just get the same keyword (like CombatData.Damage, makes sense if you read the scripts).
 To make this system responsive to the user and satisfying as possible without going overboard, I made a **client-based combat system, server for validating everything.**
 The client presses mouse button 1 which invokes a remote function to the server to retrieve the player's current combo, and if they are able to actually ues combat now (like if they're Unarmed then it nothing will happen, cooldown, etc.)
@@ -29,7 +27,7 @@ The server returns the hit character's root part to the client.
 Using the root part of the other character, sfx & vfx plays to show that they've been damaged.
 Also, it plays a hit animation.
 
-# ***Toggle System***
+# *Toggle System*
 In this project, instead of using normal tools, I implemented a toggle system of **responsively cloning a pre-made model into the player's character (their right arm in this project) and used Cframe values to correctly set the Cframe of the new model.**
 To begin, the client sends an input, via an Input detection utility that tracks input and returns callbacks (functions written inside of any script so in this example the client presses 'X' and it runs the function passed in (as an argument)).
 The server gets some stored assets from ServerStorage.
@@ -42,7 +40,7 @@ Additionally, we play animations, sfx, and vfx on the client for a smooth respon
 The function 'DestroyWaepon(...)' does the opposite, gets the player's weapon and destroys it.
 It then clones the accessory and uses the function 'AddAccessory(...)' found in the Humanoid class.
 
-# ***Player State utility***
+# *Player State utility*
 To make sure that multiple scripts, that require the player's current state', I programmed a **player state controller that initializes states, enables states (that disable all other states), and gets state values.**
 In case of adding new states (or removing) and making sure every player has the same states (as in they all have an Unarmed state for example), I made a dict of state names and their starting values (bools).
 When the 'InitPlayerStates(...)' function is called, it copies the States table to another table of the Player.
